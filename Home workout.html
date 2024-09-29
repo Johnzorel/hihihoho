@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        p {text-align: center;}
+        div {text-align: center;}
+        h1 {text-align: left;}
+        img {
+            border: 5px solid #777;
+        }
+        section {
+            margin: 0px;
+            background-color: black;
+            border-radius: 8px;
+        }
+
+        * {box-sizing: border-box;}
+
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: Arial;
+            background-color: black;
+        }
+
+        .tablink {
+            background-color: #555;
+            color: white;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            font-size: 17px;
+            width: 25%;
+        }
+
+        .tablink:hover {
+            background-color: #777;
+        }
+
+        .tabcontent {
+            color: white;
+            display: none;
+            padding: 100px 20px;
+            height: 100%;
+        }
+
+        #Home {background-color: #000001;}
+        #Beginner {background-color: #0143A0;}
+        #Intermediate {background-color: #011BA0;}
+        #Advanced {background-color: #02012b;}
+
+        .image-left {
+            float: left;
+            margin-right: 20px;
+        }
+
+        .image-right {
+            float: right;
+            margin-left: 20px;
+        }
+
+        .clear {
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+
+    <button class="tablink" onclick="openPage('Home', this, '#000001')">Home</button>
+    <button class="tablink" onclick="openPage('Beginner', this, '#0143A0')" id="defaultOpen">Beginner</button>
+    <button class="tablink" onclick="openPage('Intermediate', this, '#011BA0')">Intermediate</button>
+    <button class="tablink" onclick="openPage('Advanced', this, '#02012b')">Advanced</button>
+
+    <div id="Home" class="tabcontent">
+        <section>
+            <h1>Home</h1>
+            <br>
+            <img src="https://th.bing.com/th/id/OIP.bnZe6b81-_1r7Tss0wdTPwAAAA?rs=1&pid=ImgDetMain" class="center"width="474px" height="379px">
+            <p>"Your body is the only place you have to<br> live—take care of it! Start moving, stay active,<br> and feel the difference. Your future self will thank you!"</p>
+            <br>
+            <h2>The Importance of Physical Fitness</h2>
+            <img src="https://static.vecteezy.com/system/resources/previews/000/468/768/original/fitness-concept-illustration-vector.jpg" alt="Person exercising" class="image-left" width="250" height="250">
+            <p>Physical fitness plays a crucial role in maintaining overall health and well-being. Regular exercise helps improve cardiovascular health, strengthen muscles, and enhance flexibility. It also helps manage weight, reduces the risk of chronic diseases, and improves mental health by reducing stress and anxiety.</p>
+            <p>Whether you're running, lifting weights, or practicing yoga, staying active is essential for a healthy lifestyle. Incorporating a variety of physical activities into your routine can help you stay motivated and achieve your fitness goals.</p>
+            <div class="clear"></div>
+            <br>
+            <br>
+            <h2>Nutrition: Fueling Your Body Right</h2>
+            <img src="https://th.bing.com/th/id/OIP.cyeYsfIqzUqQmeDMCb68bgHaEs?rs=1&pid=ImgDetMain" alt="Healthy food" class="image-right" width="250" height="250">
+            <p>Nutrition is just as important as exercise when it comes to maintaining good health. A balanced diet provides the energy and nutrients your body needs to function optimally. This includes a mix of fruits, vegetables, whole grains, lean proteins, and healthy fats.</p>
+            <p>It's important to eat a variety of foods to ensure you're getting all the necessary vitamins and minerals. Additionally, staying hydrated by drinking plenty of water throughout the day is essential for maintaining energy levels and supporting bodily functions.</p>
+            <div class="clear"></div>
+            <br>
+            <br>
+            <h2>Mental Health and Wellness</h2>
+            <img src="https://th.bing.com/th/id/OIP.YD7YMNh07ZyIA8AlY6HaBQHaEU?rs=1&pid=ImgDetMain" class="image-left" width="250" height="250">
+            <p>Mental health and wellness refer to a state of emotional, psychological, and social well-being where an individual can cope with the normal stresses of life, work productively, and contribute to their community. It involves how we think, feel, and act, as well as how we handle stress, relate to others, and make choices. Mental health is not just the absence of mental illness but also the presence of positive characteristics like resilience, self-esteem, and a sense of purpose.</p>
+            <p>The importance of mental health and wellness lies in its profound impact on every aspect of our lives. Good mental health allows individuals to realize their full potential, build strong relationships, and navigate life's challenges with a positive outlook. Conversely, poor mental health can lead to difficulties in functioning daily, strained relationships, and even physical health problems. Prioritizing mental wellness is essential for overall health, as it fosters a balanced, fulfilling life and contributes to a thriving community.</p>
+            <div class="clear"></div>
+        </section>
+    </div>
+
+    <div id="Beginner" class="tabcontent">
+        <h1>Beginner</h1>
+        <p>"Every great fitness journey begins with a single step. Start small, stay consistent, and watch your progress grow stronger each day!"</p>
+    </div>
+
+    <div id="Intermediate" class="tabcontent">
+        <h1>Intermediate</h1>
+        <p>"With dedication, hard work, and a strong foundation, you'll be able to achieve greatness. Embrace the challenges, and remember that your journey is far from over!"</p>
+    </div>
+
+    <div id="Advanced" class="tabcontent">
+        <h1>Advanced</h1>
+        <p>"Push your limits and unlock your true potential! Advanced workouts challenge you to break barriers, build strength, and achieve what once seemed impossible. The only limit is the one you set!"</p>
+    </div>
+
+    <script>
+        function openPage(pageName, elmnt, color) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablink");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].style.backgroundColor = "";
+            }
+            document.getElementById(pageName).style.display = "block";
+            elmnt.style.backgroundColor = color;
+        }
+
+        document.getElementById("defaultOpen").click();
+    </script>
+
+</body>
+</html>
