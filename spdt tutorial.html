@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hi moo</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f9;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            overflow: hidden;
+        }
+        .container {
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            font-size: 3em;
+            color: #333;
+        }
+        button {
+            margin: 20px;
+            padding: 15px 25px;
+            font-size: 1.5em;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        #yes {
+            background-color: #28a745;
+            color: white;
+        }
+        #no {
+            background-color: #dc3545;
+            color: white;
+            position: absolute;
+        }
+        #yes:hover, #no:hover {
+            opacity: 0.8;
+        }
+        #response {
+            font-size: 2em;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Will You Marry Me Moo?</h1>
+        <button id="yes">Yes</button>
+        <button id="no">No</button>
+        <p id="response"></p>
+    </div>
+
+    <script>
+        // Handle the "Yes" button click
+        document.getElementById('yes').addEventListener('click', function() {
+            document.getElementById('response').innerText = 'Yay! I can’t wait to spend forever with you! 💍💕';
+            document.getElementById('no').style.display = 'none';  // Hide the "No" button once "Yes" is clicked
+        });
+
+        // Handle the "No" button movement
+        document.getElementById('no').addEventListener('mouseover', function() {
+            const button = document.getElementById('no');
+            const x = Math.random() * (window.innerWidth - button.offsetWidth);
+            const y = Math.random() * (window.innerHeight - button.offsetHeight);
+            button.style.left = x + 'px';
+            button.style.top = y + 'px';
+        });
+    </script>
+
+</body>
+</html>
